@@ -1,0 +1,13 @@
+bin
+obj
+PrecompiledWeb
+*.scc
+*.suo
+*.pdb
+*.csproj.user
+*.vbproj.user
+*.csproj.webinfo
+*.vbproj.webinfo
+Web.Debug.config
+Thumbs.db
+~$*.*
