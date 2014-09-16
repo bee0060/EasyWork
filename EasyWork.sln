@@ -5,6 +5,8 @@ VisualStudioVersion = 12.0.21005.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TextReplaceHelper", "TextReplaceHelper\TextReplaceHelper.csproj", "{2330796F-917B-4777-B1DB-E3ECFA0CC615}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EasyIO", "Lib\EasyIO\EasyIO.csproj", "{12E73113-1616-4192-BC17-AF776247B2BB}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{2330796F-917B-4777-B1DB-E3ECFA0CC615}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2330796F-917B-4777-B1DB-E3ECFA0CC615}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2330796F-917B-4777-B1DB-E3ECFA0CC615}.Release|Any CPU.Build.0 = Release|Any CPU
+		{12E73113-1616-4192-BC17-AF776247B2BB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{12E73113-1616-4192-BC17-AF776247B2BB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{12E73113-1616-4192-BC17-AF776247B2BB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{12E73113-1616-4192-BC17-AF776247B2BB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

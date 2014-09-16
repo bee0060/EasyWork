@@ -11,6 +11,7 @@ using System.Text.RegularExpressions;
 using System.IO;
 using System.Linq;
 using System.Linq.Expressions;
+using EasyIO;
 
 
 namespace TextReplaceHelper
@@ -27,7 +28,7 @@ namespace TextReplaceHelper
             try
             {
                 Regex reg = new Regex(txtReg.Text, RegexOptions.Multiline);
-                DirectoryInfo di = new DirectoryInfo(txtSourceDirectory.Text);
+                EasyDirectory di = new EasyDirectory(txtSourceDirectory.Text);
 
                 if (reg == null)
                 {
@@ -38,7 +39,8 @@ namespace TextReplaceHelper
                 {
                     throw new Exception("源文件夹路径错误");
                 }
-                List<string> matchString = FindInDirecotry(reg, di, "*.*", "*.*");
+                List<FileInfo> files = di.GetFiles(true);
+                List<string> matchString = FindFromFiles(reg, files.ToArray());                
                 FindResult(matchString);
             }
             catch (Exception ex)
@@ -52,25 +54,6 @@ namespace TextReplaceHelper
         {
             fbdDirectory.ShowDialog();
             this.txtSourceDirectory.Text = fbdDirectory.SelectedPath;
-        }
-
-
-        private List<string> FindInDirecotry(Regex reg, DirectoryInfo directory, string fileSearchPattern, string direcotrySearchPattern)
-        {
-            List<string> matchString = new List<string>();
-            FileInfo[] files = directory.GetFiles(fileSearchPattern);
-            DirectoryInfo[] direcotries = directory.GetDirectories(direcotrySearchPattern);
-
-            matchString.AddRange(FindFromFiles(reg, files));
-
-            if (direcotries != null)
-            {
-                foreach (DirectoryInfo di in direcotries)
-                {
-                    matchString.AddRange(FindInDirecotry(reg, di, fileSearchPattern, direcotrySearchPattern));
-                }
-            }
-            return matchString;
         }
 
         private List<string> FindFromFiles(Regex reg, FileInfo[] files)
@@ -115,7 +98,7 @@ namespace TextReplaceHelper
             return fileContent;
         }
 
-        private void WriteFile
+        //private void WriteFile
         
 
         enum OutputMode
